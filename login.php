@@ -31,7 +31,11 @@
 		<form action="" method="post" class="form-signin m-auto">
 			<div class="form-floating">
 				<input type="text" class="form-control" name="username"
+<<<<<<< HEAD
 				id="username" placeholder="example.com" dir="ltr" autofocus>
+=======
+				id="username" placeholder="example.com" autofocus>
+>>>>>>> a4615c88a7f61f26dbb32aae42171b30aee76ad7
 				<label for="username">نام کاربری</label>
 			</div>
 			<div class="form-floating">
