@@ -1,13 +1,11 @@
 <?php
-	define('servername', 'localhost');
-	define('username', 'shortner');
-	define('password', 'Yasinrb021');
-	define('dbname', 'shortner');
-
-	$conn = mysqli_connect(servername, username, password, dbname);
-	mysqli_set_charset($conn, 'utf8mb4');
+	define('dbServername', 'localhost');
+	define('dbUsername', 'yasinrabiee_shortner');
+	define('dbPassword', 'Yasinrb021');
+	define('dbName', 'yasinrabiee_shortner');
+	// Replace url
+	define('url', 'https://yasinrabiee.ir/url/?url=');
 	
-	if (!$conn) {
-	  die("Connection failed: " . mysqli_connect_error());
-	}
+	define('adminUsername', 'admin');
+	define('adminPass', 'root');
 ?>

@@ -1,11 +1,15 @@
 <?php
+	session_start();
+	if (!isset($_SESSION['login-admin'])) {
+		header('location: login.php');
+	}
+
 	require_once 'config.php';
 
 	$alert = '';
 	if (isset($_POST['short'])) {
 		$endLink = $_POST['endLink'];
-		// Replace localhost to your URL
-		$customLink = 'localhost/url_shortner/?url=' . $_POST['customLink'];
+		$customLink = url . $_POST['customLink'];
 
 		$sqlCheck = "SELECT * FROM links WHERE custom_link = '$customLink'"; 
 		$result = $conn->query($sqlCheck);
@@ -35,8 +39,7 @@
 	}
 
 	if (!empty($_GET['url'])) {
-		// Replace localhost to your URL
-		$customLink = 'localhost/url_shortner/?url=' . $_GET['url'];
+		$customLink = url . $_GET['url'];
 		$sqlFindEndUrl = "SELECT * FROM links WHERE custom_link = '$customLink'";
 		$result = $conn->query($sqlFindEndUrl);
 		$result = $result->fetch_assoc();
@@ -68,8 +71,7 @@
 				<div class="badge bg-primary-subtle py-2 px-3 mb-1 border border-primary-subtle text-primary-emphasis">آدرس دلخواه</div>
 				<div class="input-group mb">
 					<input type="text" dir="ltr" class="form-control" name="customLink" id="customLink" aria-describedby="basic-addon3 basic-addon4">
-					<!-- Replace localhost to your URL -->
-					<span class="input-group-text" id="basic-addon3" dir="ltr">localhost/url_shortner/?url=</span>
+					<span class="input-group-text" id="basic-addon3" dir="ltr"><?= url ?></span>
 				</div>
 			</div>
 			<div class="text-center">
