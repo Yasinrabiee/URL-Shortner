@@ -16,10 +16,12 @@
 		$sqlCheck = "SELECT * FROM links WHERE custom_link = '$customLink'"; 
 		$result = $conn->query($sqlCheck);
 
-		if ($result->num_rows > 0) {
+		if ($result->num_rows > 0)
+		{
 			$alert = "<div class='alert alert-danger'>این لینک قبلا توسط شخص دیگری ثبت شده است.</div>";
 		} 
-		else {
+		else
+		{
 			$sqlInsert = "INSERT INTO links(custom_link, end_link) VALUES ('$customLink', '$endLink')";
 			$result = $conn->query($sqlInsert);
 			$alert = "
@@ -40,7 +42,8 @@
 		}
 	}
 
-	if (!empty($_GET['url'])) {
+	if (!empty($_GET['url']))
+	{
 		$customLink = url . $_GET['url'];
 		$sqlFindEndUrl = "SELECT * FROM links WHERE custom_link = '$customLink'";
 		$result = $conn->query($sqlFindEndUrl);
