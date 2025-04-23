@@ -5,12 +5,14 @@
 	$alert = '';
 	if (isset($_POST['login']))
 	{
-		if ($_POST['username'] == adminUsername && $_POST['password'] == adminPass) {
+		if ($_POST['username'] == adminUsername && $_POST['password'] == adminPass)
+		{
 			$_SESSION['login-admin'] = adminUsername . ':' . adminPass;
 			$alert = '<div class="alert alert-success">در حال وارد شدن به سیستم هستید...</div>';
 			header ('refresh:1; url=./');
 		}
-		else {
+		else
+		{
 			$alert = '<div class="alert alert-danger">نام کاربری یا گذرواژه اشتباه است...</div>';
 		}
 	}
