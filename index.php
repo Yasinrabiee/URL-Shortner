@@ -1,13 +1,15 @@
 <?php
 	session_start();
-	if (!isset($_SESSION['login-admin'])) {
+	if (!isset($_SESSION['login-admin']))
+	{
 		header('location: login.php');
 	}
 
 	require_once 'config.php';
 
 	$alert = '';
-	if (isset($_POST['short'])) {
+	if (isset($_POST['short']))
+	{
 		$endLink = $_POST['endLink'];
 		$customLink = url . $_POST['customLink'];
 
